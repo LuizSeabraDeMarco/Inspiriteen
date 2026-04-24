@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inspiriteen | Execução Real para Impacto Social</title>
+    <title>Inspireteen | Execução Real para Impacto Social</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -19,8 +19,6 @@
             --border-v5: rgba(255, 255, 255, 0.1);
             --transition-v5: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
             --font-v5: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            --status-open: #34c759;
-            --status-closed: #ff3b30;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; }
@@ -42,8 +40,6 @@
         .nav-link-v5:hover { color: var(--text-v5-main); }
         .btn-v5-primary { padding: 12px 24px; background: var(--primary-v5); color: #fff; border-radius: 12px; font-weight: 700; text-decoration: none; transition: var(--transition-v5); border: none; cursor: pointer; }
         .btn-v5-primary:hover { transform: scale(1.05); box-shadow: 0 10px 30px rgba(0, 122, 255, 0.3); }
-        .btn-v5-primary.disabled { background: var(--text-v5-muted); cursor: not-allowed; opacity: 0.6; }
-        .btn-v5-primary.disabled:hover { transform: none; box-shadow: none; }
         .btn-v5-outline { padding: 12px 24px; border: 1px solid var(--border-v5); color: var(--text-v5-main); border-radius: 12px; font-weight: 700; text-decoration: none; transition: var(--transition-v5); background: transparent; cursor: pointer; }
         .btn-v5-outline:hover { background: #fff; color: #000; border-color: #fff; }
         .mobile-toggle-v5 { display: none; font-size: 1.5rem; cursor: pointer; }
@@ -53,6 +49,11 @@
         .hero-btns-v5 { display: flex; flex-direction: column; align-items: center; gap: 30px; }
         .btn-v5-large { padding: 20px 40px; background: #fff; color: #000; font-size: 1.2rem; font-weight: 800; border-radius: 16px; text-decoration: none; transition: var(--transition-v5); }
         .btn-v5-large:hover { transform: scale(1.05); box-shadow: 0 20px 40px rgba(255, 255, 255, 0.1); }
+        .hero-avatars { display: flex; align-items: center; gap: 15px; }
+        .avatar { width: 40px; height: 40px; border-radius: 50%; border: 2px solid var(--bg-midnight); overflow: hidden; margin-left: -15px; }
+        .avatar:first-child { margin-left: 0; }
+        .avatar img { width: 100%; height: 100%; object-fit: cover; }
+        .hero-avatars span { font-size: 0.9rem; color: var(--text-v5-muted); font-weight: 600; }
         .section-header-v5 { text-align: center; margin-bottom: 80px; max-width: 700px; margin-left: auto; margin-right: auto; }
         .section-header-v5 p { color: var(--text-v5-muted); font-size: 1.2rem; margin-top: 15px; }
         .bento-grid { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: minmax(250px, auto); gap: 20px; }
@@ -73,9 +74,6 @@
         .ong-overlay-v5 { position: absolute; bottom: 0; width: 100%; height: 50%; background: linear-gradient(to top, var(--bg-midnight), transparent); }
         .ong-body-v5 { padding: 40px; margin-top: -40px; position: relative; flex-grow: 1; display: flex; flex-direction: column; }
         .bento-tag { display: inline-block; padding: 6px 12px; background: var(--primary-v5); border-radius: 8px; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; margin-bottom: 15px; align-self: flex-start; }
-        .status-tag { display: inline-block; padding: 4px 10px; border-radius: 6px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; margin-left: 10px; vertical-align: middle; }
-        .status-tag.open { background: rgba(52, 199, 89, 0.2); color: var(--status-open); border: 1px solid var(--status-open); }
-        .status-tag.closed { background: rgba(255, 59, 48, 0.2); color: var(--status-closed); border: 1px solid var(--status-closed); }
         .ong-body-v5 h3 { font-size: 2rem; margin-bottom: 15px; }
         .ong-body-v5 p { color: var(--text-v5-muted); margin-bottom: 30px; line-height: 1.6; }
         .ong-actions-v5 { display: flex; gap: 15px; margin-top: auto; flex-wrap: wrap; }
@@ -180,6 +178,9 @@
         }
 
         .modal-body-v5 p {
+            font-size: 1.2rem;
+            color: var(--text-v5-muted);
+            line-height: 1.8;
             margin-bottom: 40px;
         }
 
@@ -240,7 +241,7 @@
 <!-- NAVBAR -->
 <header class="navbar-v5">
     <nav class="container">
-        <div class="logo-v5">Inspiri<span>teen</span></div>
+        <div class="logo-v5">Inspire<span>teen</span></div>
         <div class="nav-actions">
             <a href="#ongs" class="nav-link-v5">Projetos</a>
             <a href="#manifesto" class="nav-link-v5">Manifesto</a>
@@ -266,7 +267,7 @@
         </div>
         <div class="hero-bottom" data-aos="fade-up" data-aos-delay="200">
             <p>
-                O Inspiriteen conecta ONGs com desafios reais a squads de jovens desenvolvedores
+                O Inspireteen conecta ONGs com desafios reais a squads de jovens desenvolvedores
                 que constroem e entregam sistemas prontos para uso.
             </p>
             <div class="hero-btns-v5">
@@ -318,7 +319,7 @@
                 <h2>Não é sobre código.<br>É sobre <span class="gradient-v5">impacto real.</span></h2>
                 <p>
                     Acreditamos que a tecnologia é a ferramenta mais poderosa para mudança social. 
-                    No Inspiriteen, não fazemos "projetos de estudo", fazemos sistemas que mudam vidas.
+                    No Inspireteen, não fazemos "projetos de estudo", fazemos sistemas que mudam vidas.
                 </p>
             </div>
             <div class="bento-item" data-aos="fade-up">
@@ -368,14 +369,14 @@
 <footer class="footer-v5">
     <div class="container">
         <div class="footer-top-v5">
-            <div class="logo-v5">Inspiri<span>teen</span></div>
+            <div class="logo-v5">Inspire<span>teen</span></div>
             <div class="footer-links-v5">
                 <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
                 <a href="#"><i class="fab fa-github"></i> GitHub</a>
             </div>
         </div>
         <div class="footer-bottom-v5">
-            <p>© 2026 Inspiriteen. Todos os direitos reservados.</p>
+            <p>© 2026 Inspireteen. Todos os direitos reservados.</p>
             <p>Feito com <i class="fas fa-heart" style="color: var(--primary-v5);"></i> por quem executa.</p>
         </div>
     </div>
@@ -395,24 +396,24 @@
             <div class="modal-details-v5">
                 <div class="detail-item-v5">
                     <h4>Status</h4>
-                    <span id="modal-status">Inscrições Abertas</span>
+                    <span>Inscrições Abertas</span>
                 </div>
                 <div class="detail-item-v5">
                     <h4>Vagas</h4>
-                    <span id="modal-vagas">5-8 Builders</span>
+                    <span>5-8 Builders</span>
                 </div>
                 <div class="detail-item-v5">
                     <h4>Duração</h4>
-                    <span id="modal-duration">8 Semanas</span>
+                    <span>8 Semanas</span>
                 </div>
                 <div class="detail-item-v5">
                     <h4>Stack</h4>
-                    <span id="modal-stack">React, Node.js, Tailwind</span>
+                    <span>React, Node.js, Tailwind</span>
                 </div>
             </div>
 
             <div class="cta-buttons" style="justify-content: flex-start;">
-                <a id="modal-cta" href="https://docs.google.com/forms/d/e/1FAIpQLSd6S_54v66-8CspD5PJRTNnbk97rf_n4nrF7PyDYFhWQhJ4bg/viewform?usp=publish-editor" target="_blank" class="btn-v5-primary">Quero Participar</a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSd6S_54v66-8CspD5PJRTNnbk97rf_n4nrF7PyDYFhWQhJ4bg/viewform?usp=publish-editor" target="_blank" class="btn-v5-primary">Quero Participar</a>
                 <button class="btn-v5-outline modal-close-btn">Fechar</button>
             </div>
         </div>
@@ -433,26 +434,32 @@ document.addEventListener('DOMContentLoaded', () => {
     // 2. Dados das ONGs
     const ongs = [
         {
-            name: "NanoWait",
-            desc: "Motor de execução adaptativo que substitui time.sleep() por espera inteligente baseada no sistema.",
-            fullDesc: "NanoWait é um execution engine para Python que adapta o tempo de espera com base na CPU, memória e rede, eliminando delays fixos. Já ultrapassa 17 mil downloads e é usado em mais de 50 países como solução real de automação inteligente.",
-            tag: "Lib Python",
-            image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97",
-            status: "aberta", // aberta ou fechada
-            duration: "Indeterminado",
-            techs: "Python",
-            vagas: "3-5 Builders"
+            name: "Instituto Semente Viva",
+            desc: "Hackeando a fome urbana através de hortas inteligentes e monitoramento de dados para comunidades carentes.",
+            fullDesc: "O Instituto Semente Viva busca transformar áreas urbanas ociosas em fontes de alimento e educação. O projeto consiste em desenvolver um sistema de monitoramento para hortas comunitárias, utilizando sensores de umidade e uma plataforma dashboard para que os moradores possam gerenciar o plantio de forma eficiente.",
+            tag: "Meio Ambiente",
+            image: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=800&q=80"
         },
         {
-            name: "AI Critic",
-            desc: "Engine de avaliação que transforma métricas de ML em decisões reais de deploy.",
-            fullDesc: "AI Critic avalia modelos de machine learning com um pipeline baseado em grafos, gerando um score de risco (0–100) e podendo bloquear deploys inseguros. Já ultrapassa 11 mil downloads e é usado em mais de 40 países.",
-            tag: "Lib Python",
-            image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c",
-            status: "aberta", // aberta ou fechada
-            duration: "Indeterminado",
-            techs: "Python",
-            vagas: "4-6 Builders"
+            name: "Educação Para Todos",
+            desc: "Construindo a ponte digital para o conhecimento em comunidades sem acesso à internet e tecnologia.",
+            fullDesc: "Este projeto visa criar uma plataforma de conteúdo educacional offline para escolas em regiões remotas. O squad trabalhará no desenvolvimento de um Progressive Web App (PWA) que permite o download de aulas e exercícios quando há conexão, mantendo a funcionalidade total sem internet.",
+            tag: "Educação",
+            image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80"
+        },
+        {
+            name: "Patinhas de Ouro",
+            desc: "Marketplace de adoção com IA para encontrar o match perfeito entre animais resgatados e novos lares.",
+            fullDesc: "A Patinhas de Ouro precisa de um sistema moderno de match-making. O objetivo é criar uma interface intuitiva onde adotantes preenchem seu perfil e uma IA sugere os animais mais compatíveis com seu estilo de vida, agilizando o processo de adoção e reduzindo devoluções.",
+            tag: "Causa Animal",
+            image: "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=800&q=80"
+        },
+        {
+            name: "Saúde Solidária",
+            desc: "Sistema de telemedicina simplificado para conectar médicos voluntários a quem mais precisa de atendimento.",
+            fullDesc: "O projeto Saúde Solidária foca na triagem e atendimento básico remoto. Desenvolveremos uma plataforma de agendamento e videochamada otimizada para conexões instáveis, permitindo que médicos voluntários atendam pacientes em áreas vulneráveis com segurança e privacidade.",
+            tag: "Saúde",
+            image: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=800&q=80"
         }
     ];
 
@@ -465,11 +472,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const mTag = document.getElementById('modal-tag');
     const mDesc = document.getElementById('modal-desc');
     const mImg = document.getElementById('modal-img');
-    const mStatus = document.getElementById('modal-status');
-    const mDuration = document.getElementById('modal-duration');
-    const mStack = document.getElementById('modal-stack');
-    const mVagas = document.getElementById('modal-vagas');
-    const mCTA = document.getElementById('modal-cta');
 
     if (ongsContainer) {
         ongs.forEach((ong, index) => {
@@ -478,26 +480,17 @@ document.addEventListener('DOMContentLoaded', () => {
             card.setAttribute('data-aos', 'fade-up');
             card.setAttribute('data-aos-delay', (index * 100).toString());
 
-            const statusClass = ong.status === 'aberta' ? 'open' : 'closed';
-            const statusText = ong.status === 'aberta' ? 'Inscrições Abertas' : 'Inscrições Fechadas';
-
             card.innerHTML = `
                 <div class="ong-img-v5" style="background-image: url('${ong.image}')">
                     <div class="ong-overlay-v5"></div>
                 </div>
                 <div class="ong-body-v5">
-                    <div>
-                        <span class="bento-tag">${ong.tag}</span>
-                        <span class="status-tag ${statusClass}">${statusText}</span>
-                    </div>
+                    <span class="bento-tag">${ong.tag}</span>
                     <h3>${ong.name}</h3>
                     <p>${ong.desc}</p>
                     <div class="ong-actions-v5">
                         <button class="btn-v5-primary btn-view-more" data-index="${index}">Ver Detalhes</button>
-                        ${ong.status === 'aberta' 
-                            ? `<a href="https://docs.google.com/forms/d/e/1FAIpQLSd6S_54v66-8CspD5PJRTNnbk97rf_n4nrF7PyDYFhWQhJ4bg/viewform?usp=publish-editor" target="_blank" class="btn-v5-outline">Participar</a>`
-                            : `<button class="btn-v5-outline" disabled style="opacity: 0.5; cursor: not-allowed;">Encerrado</button>`
-                        }
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSd6S_54v66-8CspD5PJRTNnbk97rf_n4nrF7PyDYFhWQhJ4bg/viewform?usp=publish-editor" target="_blank" class="btn-v5-outline">Participar</a>
                     </div>
                 </div>
             `;
@@ -514,21 +507,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 mTag.innerText = project.tag;
                 mDesc.innerText = project.fullDesc || project.desc;
                 mImg.style.backgroundImage = `url('${project.image}')`;
-                
-                // Novos campos
-                mStatus.innerText = project.status === 'aberta' ? 'Inscrições Abertas' : 'Inscrições Fechadas';
-                mStatus.style.color = project.status === 'aberta' ? 'var(--status-open)' : 'var(--status-closed)';
-                mDuration.innerText = project.duration || 'A definir';
-                mStack.innerText = project.techs || 'A definir';
-                mVagas.innerText = project.vagas || '5-8 Builders';
-
-                // Ajuste do CTA no modal
-                if (project.status === 'aberta') {
-                    mCTA.style.display = 'inline-block';
-                    mCTA.innerText = 'Quero Participar';
-                } else {
-                    mCTA.style.display = 'none';
-                }
                 
                 modal.classList.add('active');
                 document.body.style.overflow = 'hidden'; // Trava scroll
